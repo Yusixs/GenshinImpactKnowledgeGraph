@@ -1,0 +1,1706 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.genshin.org/"
+     xml:base="http://www.genshin.org/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:genshinOntology="http://www.genshin.org/ontology/"
+     xmlns:genshinResource="http://www.genshin.org/resource/">
+    <owl:Ontology rdf:about="http://www.genshin.org/ontology/">
+        <owl:versionIRI rdf:resource="http://www.genshin.org/ontology/1.0.0/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.genshin.org/ontology/canEasilyDefeat -->
+
+    <owl:ObjectProperty rdf:about="http://www.genshin.org/ontology/canEasilyDefeat">
+        <owl:inverseOf rdf:resource="http://www.genshin.org/ontology/isEasilyDefeatedBy"/>
+        <rdfs:domain rdf:resource="http://www.genshin.org/ontology/Character"/>
+        <rdfs:range rdf:resource="http://www.genshin.org/ontology/Enemy"/>
+        <rdfs:comment>Inferred from SWRL rules. Only given to those characters which can easily defeat an enemy given that the enemy is weak to the character&apos;s element</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/canWeildWeapon -->
+
+    <owl:ObjectProperty rdf:about="http://www.genshin.org/ontology/canWeildWeapon">
+        <owl:inverseOf rdf:resource="http://www.genshin.org/ontology/weaponUsedBy"/>
+        <rdfs:domain rdf:resource="http://www.genshin.org/ontology/Character"/>
+        <rdfs:range rdf:resource="http://www.genshin.org/ontology/Weapon"/>
+        <rdfs:comment>SWRL Rule property. Pair all characters which use a specific weapon type to weapons of that specific weapon type</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/causesReaction -->
+
+    <owl:ObjectProperty rdf:about="http://www.genshin.org/ontology/causesReaction">
+        <owl:inverseOf rdf:resource="http://www.genshin.org/ontology/requiresElement"/>
+        <rdfs:domain rdf:resource="http://www.genshin.org/ontology/Element"/>
+        <rdfs:range rdf:resource="http://www.genshin.org/ontology/Reaction"/>
+        <rdfs:comment>Any element that can cause a reaction</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/dropsMaterial -->
+
+    <owl:ObjectProperty rdf:about="http://www.genshin.org/ontology/dropsMaterial">
+        <rdfs:domain rdf:resource="http://www.genshin.org/ontology/Enemy"/>
+        <rdfs:range rdf:resource="http://www.genshin.org/ontology/Material"/>
+        <rdfs:comment>Any enemy which drops a material</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/elementAlignment -->
+
+    <owl:ObjectProperty rdf:about="http://www.genshin.org/ontology/elementAlignment">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.genshin.org/ontology/Element"/>
+        <rdfs:comment>Any character having an element . It&apos;s made functional because a character cannot have more than 1 element. If they do, it should mean that the two element instances are the same individuals.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/enemyWeakAgainst -->
+
+    <owl:ObjectProperty rdf:about="http://www.genshin.org/ontology/enemyWeakAgainst">
+        <rdfs:domain rdf:resource="http://www.genshin.org/ontology/Enemy"/>
+        <rdfs:range rdf:resource="http://www.genshin.org/ontology/Element"/>
+        <rdfs:comment>Any enemy which is weak to a particular element. This is mentioned in the database</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/hasConstellation -->
+
+    <owl:ObjectProperty rdf:about="http://www.genshin.org/ontology/hasConstellation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.genshin.org/ontology/Character"/>
+        <rdfs:range rdf:resource="http://www.genshin.org/ontology/Constellation"/>
+        <rdfs:comment>Any character that has a constellation. This is mentioned in the database and has been made inverse functional because a constellation cannot belong to more than 1 character. If that case ever happens, then both character individuals are the same individual</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/hasResident -->
+
+    <owl:ObjectProperty rdf:about="http://www.genshin.org/ontology/hasResident">
+        <owl:inverseOf rdf:resource="http://www.genshin.org/ontology/residesAt"/>
+        <rdfs:comment>A region that houses any character</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/hasRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.genshin.org/ontology/hasRole">
+        <rdfs:domain rdf:resource="http://www.genshin.org/ontology/Character"/>
+        <rdfs:range rdf:resource="http://www.genshin.org/ontology/Role"/>
+        <rdfs:comment>Any character that has a specific role. This is mentioned in the database</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/isEasilyDefeatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.genshin.org/ontology/isEasilyDefeatedBy">
+        <rdfs:comment>SWRL Rule. Pair all enemies which are easily defeated by a character</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/isEnemyType -->
+
+    <owl:ObjectProperty rdf:about="http://www.genshin.org/ontology/isEnemyType">
+        <rdfs:domain rdf:resource="http://www.genshin.org/ontology/Enemy"/>
+        <rdfs:range rdf:resource="http://www.genshin.org/ontology/EnemyType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/isWeaponType -->
+
+    <owl:ObjectProperty rdf:about="http://www.genshin.org/ontology/isWeaponType">
+        <rdfs:domain rdf:resource="http://www.genshin.org/ontology/Weapon"/>
+        <rdfs:range rdf:resource="http://www.genshin.org/ontology/WeaponType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/requiresElement -->
+
+    <owl:ObjectProperty rdf:about="http://www.genshin.org/ontology/requiresElement">
+        <rdfs:comment>Any reaciton which requires a specific element</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/residesAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.genshin.org/ontology/residesAt">
+        <rdfs:domain rdf:resource="http://www.genshin.org/ontology/Character"/>
+        <rdfs:range rdf:resource="http://www.genshin.org/ontology/Region"/>
+        <rdfs:comment>Any character that resides in a region</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/usesCharacterUpgradeMaterial -->
+
+    <owl:ObjectProperty rdf:about="http://www.genshin.org/ontology/usesCharacterUpgradeMaterial">
+        <rdfs:domain rdf:resource="http://www.genshin.org/ontology/Character"/>
+        <rdfs:range rdf:resource="http://www.genshin.org/ontology/CharacterUpgradeMaterial"/>
+        <rdfs:comment>Any material used by a character. This is mentioned in the database</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/usesWeaponType -->
+
+    <owl:ObjectProperty rdf:about="http://www.genshin.org/ontology/usesWeaponType">
+        <rdfs:domain rdf:resource="http://www.genshin.org/ontology/Character"/>
+        <rdfs:range rdf:resource="http://www.genshin.org/ontology/WeaponType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/usesWeaponUpgradeMaterial -->
+
+    <owl:ObjectProperty rdf:about="http://www.genshin.org/ontology/usesWeaponUpgradeMaterial">
+        <rdfs:domain rdf:resource="http://www.genshin.org/ontology/Weapon"/>
+        <rdfs:range rdf:resource="http://www.genshin.org/ontology/WeaponUpgradeMaterial"/>
+        <rdfs:comment>Any material used by a weapon. This is mentioned in the database</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/weaponUsedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.genshin.org/ontology/weaponUsedBy">
+        <rdfs:comment>SWRL Rule property. Pair all weapons which of a specific weapon type to characters that use that specific weapon type</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.genshin.org/ontology/birthday -->
+
+    <owl:DatatypeProperty rdf:about="http://www.genshin.org/ontology/birthday">
+        <rdfs:domain rdf:resource="http://www.genshin.org/ontology/Character"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Birthday of a character</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/hasAscensionPassive -->
+
+    <owl:DatatypeProperty rdf:about="http://www.genshin.org/ontology/hasAscensionPassive">
+        <rdfs:domain rdf:resource="http://www.genshin.org/ontology/Character"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Every character has a bonus given to his stats whenever you level this up. This property points to that bonus</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/hasGender -->
+
+    <owl:DatatypeProperty rdf:about="http://www.genshin.org/ontology/hasGender">
+        <rdfs:domain rdf:resource="http://www.genshin.org/ontology/Character"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Gender of a character</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/isArchon -->
+
+    <owl:DatatypeProperty rdf:about="http://www.genshin.org/ontology/isArchon">
+        <rdfs:domain rdf:resource="http://www.genshin.org/ontology/Character"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Boolean value being true is a character is an archon</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/isLimitedCharacter -->
+
+    <owl:DatatypeProperty rdf:about="http://www.genshin.org/ontology/isLimitedCharacter">
+        <rdfs:domain rdf:resource="http://www.genshin.org/ontology/Character"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Boolean value denoting if that character was limited or not (limited means that you can only get them during certain times)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/rarity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.genshin.org/ontology/rarity">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Rarity of a weapon or character</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.genshin.org/ontology/releaseDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.genshin.org/ontology/releaseDate">
+        <rdfs:domain rdf:resource="http://www.genshin.org/ontology/Character"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Release date of a character</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.genshin.org/ontology/AdvancedReaction -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/AdvancedReaction">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.genshin.org/ontology/requiresElement"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.genshin.org/ontology/Element"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.genshin.org/ontology/Reaction"/>
+        <rdfs:comment>Those specific reactions where more than 2 elements can participate in</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/AnemoCharacter -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/AnemoCharacter">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Character"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/elementAlignment"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/resource/Anemo"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>A character which has an Anemo Vision</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Archon -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/Archon">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Character"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/isArchon"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Boss -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/Boss">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Enemy"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/isEnemyType"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/ontology/Boss"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.genshin.org/ontology/Enemy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Bow -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/Bow">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Weapon"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/isWeaponType"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/ontology/Bow"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.genshin.org/ontology/Weapon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/BowUser -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/BowUser">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Character"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/usesWeaponType"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/ontology/Bow"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>A character which uses a Bow</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Catalyst -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/Catalyst">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Weapon"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/isWeaponType"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/ontology/Catalyst"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.genshin.org/ontology/Weapon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/CatalystUser -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/CatalystUser">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Character"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/usesWeaponType"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/ontology/Catalyst"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>A character which uses a Catalyst</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Character -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/Character"/>
+    
+
+
+    <!-- http://www.genshin.org/ontology/CharacterUpgradeMaterial -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/CharacterUpgradeMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.genshin.org/ontology/Material"/>
+        <rdfs:comment>A material which is used to upgrade characters</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Claymore -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/Claymore">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Weapon"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/isWeaponType"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/ontology/Claymore"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.genshin.org/ontology/Weapon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/ClaymoreUser -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/ClaymoreUser">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Character"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/usesWeaponType"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/ontology/Claymore"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>A character which uses a Claymore</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Constellation -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/Constellation">
+        <rdfs:comment>Constellations are a star pattern in the sky. Each character has their own unique constellation in this game.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/CryoCharacter -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/CryoCharacter">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Character"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/elementAlignment"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/resource/Cryo"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>A character which has a Cryo Vision</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/DamageDealer -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/DamageDealer">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/PlayableCharacter"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/hasRole"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/ontology/DPS"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.genshin.org/ontology/PlayableCharacter"/>
+        <rdfs:comment>Prioritizes in dealing damage to the enemy</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/DendroCharacter -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/DendroCharacter">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Character"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/elementAlignment"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/resource/Dendro"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>A character which has a Dendro Vision</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/ElectroCharacter -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/ElectroCharacter">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Character"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/elementAlignment"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/resource/Electro"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>A character which has an Electro Vision</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Element -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/Element">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/resource/Anemo"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/resource/Cryo"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/resource/Dendro"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/resource/Electro"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/resource/Geo"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/resource/Hydro"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/resource/Pyro"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Enumerated Class. This is because there are only 7 elements in the game and it&apos;s been heavily implied throughout the story that there will only be 7</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Elite -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/Elite">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Enemy"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/isEnemyType"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/ontology/Elite"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.genshin.org/ontology/Enemy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Enemy -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/Enemy">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Boss"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Elite"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Normal"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/WeeklyBoss"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Enemies you fight throughout the world while adventuring</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/EnemyType -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/EnemyType">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Boss"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Elite"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Normal"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/WeeklyBoss"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/GeoCharacter -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/GeoCharacter">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Character"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/elementAlignment"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/resource/Geo"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>A character which has a Geo Vision</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Healer -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/Healer">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/PlayableCharacter"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/hasRole"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/ontology/Healer"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.genshin.org/ontology/PlayableCharacter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/HydroCharacter -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/HydroCharacter">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Character"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/elementAlignment"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/resource/Hydro"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>A character which has a Hydro Vision</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Material -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/Material">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/CharacterUpgradeMaterial"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/OtherMaterial"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/WeaponUpgradeMaterial"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Materials are resources dropped by enemies. Used to level characters or weapons</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Normal -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/Normal">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Enemy"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/isEnemyType"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/ontology/Normal"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.genshin.org/ontology/Enemy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/OtherMaterial -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/OtherMaterial">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Material"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.genshin.org/ontology/CharacterUpgradeMaterial"/>
+                                    <rdf:Description rdf:about="http://www.genshin.org/ontology/WeaponUpgradeMaterial"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:complementOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.genshin.org/ontology/Material"/>
+        <rdfs:comment>Any material that isnt a weapon upgrade material nor a character upgrade material</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/PlayableCharacter -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/PlayableCharacter">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/VisionHolder"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/WeaponHolder"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.genshin.org/ontology/Character"/>
+        <rdfs:comment>Every playable character in genshin has a vision and has some preferred weapon they like using</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Polearm -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/Polearm">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Weapon"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/isWeaponType"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/ontology/Polearm"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.genshin.org/ontology/Weapon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/PolearmUser -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/PolearmUser">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Character"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/usesWeaponType"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/ontology/Polearm"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>A character which uses a Polearm</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/PyroCharacter -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/PyroCharacter">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Character"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/elementAlignment"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/resource/Pyro"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>A character which has a Pyro Vision</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Reaction -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/Reaction">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.genshin.org/ontology/requiresElement"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.genshin.org/ontology/Element"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:comment>Reactions are well....reactions caused when two elements combine, creating a new effect. You need atleast two elements to react together to cause a reaction</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Region -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/Region">
+        <rdfs:comment>Countries where characters usually reside in</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Role -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/Role">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/DPS"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Healer"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Shielder"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Support"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Enumerated class of DPS, Healer, Shielder and Support. There are only 4 major roles a character usually has (you deduce this by looking at their kit overall in-depth). Many databases have already classified each character in a specific role they excel at</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Shielder -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/Shielder">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/PlayableCharacter"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/hasRole"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/ontology/Shielder"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.genshin.org/ontology/PlayableCharacter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Support -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/Support">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/PlayableCharacter"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/hasRole"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/ontology/Support"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.genshin.org/ontology/PlayableCharacter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Sword -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/Sword">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Weapon"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/isWeaponType"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/ontology/Sword"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.genshin.org/ontology/Weapon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/SwordUser -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/SwordUser">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Character"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/usesWeaponType"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/ontology/Sword"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>A character which uses a Sword</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/VisionHolder -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/VisionHolder">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/AnemoCharacter"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/CryoCharacter"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/DendroCharacter"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/ElectroCharacter"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/GeoCharacter"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/HydroCharacter"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/PyroCharacter"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.genshin.org/ontology/Character"/>
+        <rdfs:comment>Any character which has a vision (visions are basically elemental affinities given to characters)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Weapon -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/Weapon">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Bow"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Catalyst"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Claymore"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Polearm"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Sword"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Weapons weilded by characters</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/WeaponHolder -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/WeaponHolder">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/BowUser"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/CatalystUser"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/ClaymoreUser"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/PolearmUser"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/SwordUser"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.genshin.org/ontology/Character"/>
+        <rdfs:comment>Any character which weilds a weapon</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/WeaponType -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/WeaponType">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Bow"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Catalyst"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Claymore"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Polearm"/>
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Sword"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Types for each Weapon (Bow, Catalyst, Claymore, Polearm and Sword).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/WeaponUpgradeMaterial -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/WeaponUpgradeMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.genshin.org/ontology/Material"/>
+        <rdfs:comment>A material which is used to upgrade weapons</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genshin.org/ontology/WeeklyBoss -->
+
+    <owl:Class rdf:about="http://www.genshin.org/ontology/WeeklyBoss">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.genshin.org/ontology/Enemy"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.genshin.org/ontology/isEnemyType"/>
+                        <owl:hasValue rdf:resource="http://www.genshin.org/ontology/WeeklyBoss"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.genshin.org/ontology/Enemy"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.genshin.org/ontology/Boss -->
+
+    <owl:NamedIndividual rdf:about="http://www.genshin.org/ontology/Boss">
+        <rdf:type rdf:resource="http://www.genshin.org/ontology/EnemyType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Bow -->
+
+    <owl:NamedIndividual rdf:about="http://www.genshin.org/ontology/Bow">
+        <rdf:type rdf:resource="http://www.genshin.org/ontology/WeaponType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Catalyst -->
+
+    <owl:NamedIndividual rdf:about="http://www.genshin.org/ontology/Catalyst">
+        <rdf:type rdf:resource="http://www.genshin.org/ontology/WeaponType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Claymore -->
+
+    <owl:NamedIndividual rdf:about="http://www.genshin.org/ontology/Claymore">
+        <rdf:type rdf:resource="http://www.genshin.org/ontology/WeaponType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.genshin.org/ontology/DPS -->
+
+    <owl:NamedIndividual rdf:about="http://www.genshin.org/ontology/DPS">
+        <rdf:type rdf:resource="http://www.genshin.org/ontology/Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Elite -->
+
+    <owl:NamedIndividual rdf:about="http://www.genshin.org/ontology/Elite">
+        <rdf:type rdf:resource="http://www.genshin.org/ontology/EnemyType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Healer -->
+
+    <owl:NamedIndividual rdf:about="http://www.genshin.org/ontology/Healer">
+        <rdf:type rdf:resource="http://www.genshin.org/ontology/Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Normal -->
+
+    <owl:NamedIndividual rdf:about="http://www.genshin.org/ontology/Normal">
+        <rdf:type rdf:resource="http://www.genshin.org/ontology/EnemyType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Polearm -->
+
+    <owl:NamedIndividual rdf:about="http://www.genshin.org/ontology/Polearm">
+        <rdf:type rdf:resource="http://www.genshin.org/ontology/WeaponType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Shielder -->
+
+    <owl:NamedIndividual rdf:about="http://www.genshin.org/ontology/Shielder">
+        <rdf:type rdf:resource="http://www.genshin.org/ontology/Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Support -->
+
+    <owl:NamedIndividual rdf:about="http://www.genshin.org/ontology/Support">
+        <rdf:type rdf:resource="http://www.genshin.org/ontology/Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.genshin.org/ontology/Sword -->
+
+    <owl:NamedIndividual rdf:about="http://www.genshin.org/ontology/Sword">
+        <rdf:type rdf:resource="http://www.genshin.org/ontology/WeaponType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.genshin.org/ontology/WeeklyBoss -->
+
+    <owl:NamedIndividual rdf:about="http://www.genshin.org/ontology/WeeklyBoss">
+        <rdf:type rdf:resource="http://www.genshin.org/ontology/EnemyType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.genshin.org/resource/Anemo -->
+
+    <owl:NamedIndividual rdf:about="http://www.genshin.org/resource/Anemo">
+        <rdf:type rdf:resource="http://www.genshin.org/ontology/Element"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.genshin.org/resource/Cryo -->
+
+    <owl:NamedIndividual rdf:about="http://www.genshin.org/resource/Cryo">
+        <rdf:type rdf:resource="http://www.genshin.org/ontology/Element"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.genshin.org/resource/Dendro -->
+
+    <owl:NamedIndividual rdf:about="http://www.genshin.org/resource/Dendro">
+        <rdf:type rdf:resource="http://www.genshin.org/ontology/Element"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.genshin.org/resource/Electro -->
+
+    <owl:NamedIndividual rdf:about="http://www.genshin.org/resource/Electro">
+        <rdf:type rdf:resource="http://www.genshin.org/ontology/Element"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.genshin.org/resource/Geo -->
+
+    <owl:NamedIndividual rdf:about="http://www.genshin.org/resource/Geo">
+        <rdf:type rdf:resource="http://www.genshin.org/ontology/Element"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.genshin.org/resource/Hydro -->
+
+    <owl:NamedIndividual rdf:about="http://www.genshin.org/resource/Hydro">
+        <rdf:type rdf:resource="http://www.genshin.org/ontology/Element"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.genshin.org/resource/Pyro -->
+
+    <owl:NamedIndividual rdf:about="http://www.genshin.org/resource/Pyro">
+        <rdf:type rdf:resource="http://www.genshin.org/ontology/Element"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.genshin.org/ontology/Boss">
+        <rdfs:comment>Very tough enemies (They even have a health bar shown on the screen)</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.genshin.org/ontology/Bow">
+        <rdfs:comment>Represents any bow in the game</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.genshin.org/ontology/Catalyst">
+        <rdfs:comment>Represents any catalyst in the game</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.genshin.org/ontology/Claymore">
+        <rdfs:comment>Represents any claymore in the game</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.genshin.org/ontology/Healer">
+        <rdfs:comment>Prioritizes in healing the team</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.genshin.org/ontology/Polearm">
+        <rdfs:comment>Represents any polearm in the game</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.genshin.org/ontology/Shielder">
+        <rdfs:comment>Prioritizes in shielding the team</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.genshin.org/ontology/Support">
+        <rdfs:comment>Prioritizes in giving buffs and removing debuffs from the team</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.genshin.org/ontology/Sword">
+        <rdfs:comment>Represents any sword in the game</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/AnemoCharacter"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/CryoCharacter"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/DendroCharacter"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/ElectroCharacter"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/GeoCharacter"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/HydroCharacter"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/PyroCharacter"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/Bow"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/Catalyst"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/Claymore"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/Polearm"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/Sword"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/BowUser"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/CatalystUser"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/ClaymoreUser"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/PolearmUser"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/SwordUser"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/Character"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/Constellation"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/Element"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/Enemy"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/EnemyType"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/Material"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/Reaction"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/Region"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/Role"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/Weapon"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/WeaponType"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/Bow"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/Catalyst"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/Claymore"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/Polearm"/>
+            <rdf:Description rdf:about="http://www.genshin.org/ontology/Sword"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.genshin.org/resource/Anemo"/>
+            <rdf:Description rdf:about="http://www.genshin.org/resource/Cryo"/>
+            <rdf:Description rdf:about="http://www.genshin.org/resource/Dendro"/>
+            <rdf:Description rdf:about="http://www.genshin.org/resource/Electro"/>
+            <rdf:Description rdf:about="http://www.genshin.org/resource/Geo"/>
+            <rdf:Description rdf:about="http://www.genshin.org/resource/Hydro"/>
+            <rdf:Description rdf:about="http://www.genshin.org/resource/Pyro"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.genshin.org/b">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.genshin.org/a">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.genshin.org/enemy">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.genshin.org/element">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.genshin.org/character">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>BowUser</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.genshin.org/ontology/Bow"/>
+                        <swrl:argument1 rdf:resource="http://www.genshin.org/b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.genshin.org/ontology/BowUser"/>
+                                <swrl:argument1 rdf:resource="http://www.genshin.org/a"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.genshin.org/ontology/canWeildWeapon"/>
+                        <swrl:argument1 rdf:resource="http://www.genshin.org/a"/>
+                        <swrl:argument2 rdf:resource="http://www.genshin.org/b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>CatalystInference</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.genshin.org/ontology/CatalystUser"/>
+                        <swrl:argument1 rdf:resource="http://www.genshin.org/a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.genshin.org/ontology/Catalyst"/>
+                                <swrl:argument1 rdf:resource="http://www.genshin.org/b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.genshin.org/ontology/canWeildWeapon"/>
+                        <swrl:argument1 rdf:resource="http://www.genshin.org/a"/>
+                        <swrl:argument2 rdf:resource="http://www.genshin.org/b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Combination of characters and enemies where the character can easily defeat the enemy if the enemy is weak to the respective character&apos;s element</rdfs:comment>
+        <rdfs:label>CharacterCanDefeatEnemy</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.genshin.org/ontology/enemyWeakAgainst"/>
+                        <swrl:argument1 rdf:resource="http://www.genshin.org/enemy"/>
+                        <swrl:argument2 rdf:resource="http://www.genshin.org/element"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.genshin.org/ontology/elementAlignment"/>
+                                <swrl:argument1 rdf:resource="http://www.genshin.org/character"/>
+                                <swrl:argument2 rdf:resource="http://www.genshin.org/element"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.genshin.org/ontology/Enemy"/>
+                                        <swrl:argument1 rdf:resource="http://www.genshin.org/enemy"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.genshin.org/ontology/Character"/>
+                                                <swrl:argument1 rdf:resource="http://www.genshin.org/character"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.genshin.org/ontology/canEasilyDefeat"/>
+                        <swrl:argument1 rdf:resource="http://www.genshin.org/character"/>
+                        <swrl:argument2 rdf:resource="http://www.genshin.org/enemy"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>ClaymoreInference</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.genshin.org/ontology/ClaymoreUser"/>
+                        <swrl:argument1 rdf:resource="http://www.genshin.org/a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.genshin.org/ontology/Claymore"/>
+                                <swrl:argument1 rdf:resource="http://www.genshin.org/b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.genshin.org/ontology/canWeildWeapon"/>
+                        <swrl:argument1 rdf:resource="http://www.genshin.org/a"/>
+                        <swrl:argument2 rdf:resource="http://www.genshin.org/b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>PolearmInference</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.genshin.org/ontology/PolearmUser"/>
+                        <swrl:argument1 rdf:resource="http://www.genshin.org/a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.genshin.org/ontology/Polearm"/>
+                                <swrl:argument1 rdf:resource="http://www.genshin.org/b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.genshin.org/ontology/canWeildWeapon"/>
+                        <swrl:argument1 rdf:resource="http://www.genshin.org/a"/>
+                        <swrl:argument2 rdf:resource="http://www.genshin.org/b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>SwordInference</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.genshin.org/ontology/Sword"/>
+                        <swrl:argument1 rdf:resource="http://www.genshin.org/b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.genshin.org/ontology/SwordUser"/>
+                                <swrl:argument1 rdf:resource="http://www.genshin.org/a"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.genshin.org/ontology/canWeildWeapon"/>
+                        <swrl:argument1 rdf:resource="http://www.genshin.org/a"/>
+                        <swrl:argument2 rdf:resource="http://www.genshin.org/b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
