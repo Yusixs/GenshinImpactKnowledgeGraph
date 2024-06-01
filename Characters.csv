@@ -1,0 +1,77 @@
+character_name,rarity,region,vision,weapon_type,constellation,birthday,ascension_boss,limited,ascension,role,gender,archon,release_date
+Albedo,5,Mondstadt,Geo,Sword,Princeps Cretaceus,13/09/2023,Basalt Pillar,TRUE,Geo DMG Bonus,Support,Male,FALSE,09/28/2020
+Alhaitham,5,Sumeru,Dendro,Sword,Vultur Volans,11/02/2023,Pseudo-Stamens,TRUE,Dendro DMG Bonus,DPS,Male,FALSE,01/18/2023
+Aloy,5,Mondstadt,Cryo,Bow,Nora Fortis,04/04/2023,Crystalline Bloom,TRUE,Cryo DMG Bonus,Support,Female,FALSE,09/01/2021
+Amber,4,Mondstadt,Pyro,Bow,Lepus,10/08/2023,Everflame Seed,FALSE,ATK,Support,Female,FALSE,09/28/2020
+Arataki Itto,5,Inazuma,Geo,Claymore,Taurus Iracundus,01/06/2023,Riftborn Regalia,TRUE,CRIT Rate,DPS,Male,FALSE,12/14/2021
+Baizhu,5,Liyue,Dendro,Catalyst,Lagenaria,25/04/2023,Evergloom Ring,TRUE,HP,Shielder,Male,FALSE,05/02/2023
+Barbara,4,Mondstadt,Hydro,Catalyst,Crater,05/07/2023,Cleansing Heart,FALSE,HP,Healer,Female,FALSE,09/28/2020
+Beidou,4,Liyue,Electro,Claymore,Victor Mare,14/02/2023,Lightning Prism,FALSE,Electro DMG Bonus,Support,Female,FALSE,09/28/2020
+Bennett,4,Mondstadt,Pyro,Sword,Rota Calamitas,01/02/2023,Everflame Seed,FALSE,Energy Recharge,Healer,Male,FALSE,09/28/2020
+Candace,4,Sumeru,Hydro,Polearm,Sagitta Scutum,03/05/2023,Light Guiding Tetrahedron,FALSE,HP,Support,Female,FALSE,09/28/2022
+Charlotte,4,Fontaine,Cryo,Catalyst,Hualina Veritas,10/04/2023,fTourbillon Device,FALSE,ATK,Healer,Female,FALSE,11/08/2023
+Chongyun,4,Liyue,Cryo,Claymore,Nubis Caesor,07/09/2023,Hoarfrost Core,FALSE,ATK,Support,Male,FALSE,09/28/2020
+Collei,4,Sumeru,Dendro,Bow,Leptailurus Cervarius,08/05/2023,Majestic Hooked Beak,FALSE,ATK,Support,Female,FALSE,08/24/2022
+Cyno,5,Sumeru,Electro,Polearm,Lupus Aureus,23/06/2023,Thunderclap Fruitcore,TRUE,CRIT DMG,DPS,Male,FALSE,09/28/2022
+Dehya,5,Sumeru,Pyro,Claymore,Mantichora,07/04/2023,Light Guiding Tetrahedron,FALSE,HP,Support,Female,FALSE,03/01/2023
+Diluc,5,Mondstadt,Pyro,Claymore,Noctua,30/04/2023,Everflame Seed,FALSE,CRIT Rate,DPS,Male,FALSE,09/28/2020
+Diona,4,Mondstadt,Cryo,Bow,Feles,18/01/2023,Hoarfrost Core,FALSE,Cryo DMG Bonus,Shielder,Female,FALSE,11/11/2020
+Dori,4,Sumeru,Electro,Claymore,Magicae Lucerna,21/12/2023,Thunderclap Fruitcore,FALSE,HP,Support,Female,FALSE,09/09/2022
+Eula,5,Mondstadt,Cryo,Claymore,Aphros Delos,25/10/2023,Crystalline Bloom,TRUE,CRIT DMG,DPS,Female,FALSE,05/18/2021
+Faruzan,4,Sumeru,Anemo,Bow,Flosculi Implexi,20/08/2023,Light Guiding Tetrahedron,FALSE,ATK,Support,Female,FALSE,12/07/2023
+Fischl,4,Mondstadt,Electro,Bow,Corvus,27/05/2023,Lightning Prism,FALSE,ATK,DPS,Female,FALSE,09/28/2020
+Freminet,4,Fontaine,Cryo,Claymore,Automaton,24/09/2023,Artificed Spare Clockwork Component - Coppelius,FALSE,ATK,Support,Male,FALSE,09/05/2023
+Furina,5,Fontaine,Hydro,Sword,Animula Choragi,13/10/2023,Water That Failed To Transcend,TRUE,CRIT Rate,Support,Female,TRUE,11/08/2023
+Ganyu,5,Liyue,Cryo,Bow,Sinae Unicornis,02/12/2023,Hoarfrost Core,TRUE,CRIT DMG,DPS,Female,FALSE,01/12/2021
+Gorou,4,Inazuma,Geo,Bow,Canis Bellatoris,18/05/2023,Perpetual Heart,FALSE,Geo DMG Bonus,Support,Male,FALSE,12/14/2021
+Hu Tao,5,Liyue,Pyro,Polearm,Papilio Charontis,15/07/2023,Juvenile Jade,TRUE,CRIT DMG,DPS,Female,FALSE,03/02/2021
+Jean,5,Mondstadt,Anemo,Sword,Leo Minor,14/03/2023,Hurricane Seed,FALSE,Healing Bonus,Healer,Female,FALSE,09/28/2020
+Kaedehara Kazuha,5,Inazuma,Anemo,Sword,Acer Palmatum,29/10/2023,Marionette Core,TRUE,Elemental Mastery,Support,Male,FALSE,06/29/2021
+Kaeya,4,Mondstadt,Cryo,Sword,Pavo Ocellus,30/11/2023,Hoarfrost Core,FALSE,Energy Recharge,DPS,Male,FALSE,09/28/2020
+Kamisato Ayaka,5,Inazuma,Cryo,Sword,Grus Nivis,28/09/2023,Perpetual Heart,TRUE,CRIT DMG,DPS,Female,FALSE,07/21/2021
+Kamisato Ayato,5,Inazuma,Hydro,Sword,Cypressus Custos,26/03/2023,Dew of Repudation,TRUE,CRIT DMG,DPS,Male,FALSE,04/30/2022
+Kaveh,4,Sumeru,Dendro,Claymore,Paradisaea,09/07/2023,Quelled Creeper,FALSE,Elemental Mastery,Support,Male,FALSE,05/02/2023
+Keqing,5,Liyue,Electro,Sword,Trulla Cementarii,20/11/2023,Lightning Prism,FALSE,CRIT DMG,DPS,Female,FALSE,09/28/2020
+Kirara,4,Inazuma,Dendro,Sword,Arcella,22/01/2023,Evergloom Ring,FALSE,HP,Healer,Female,FALSE,05/24/2023
+Klee,5,Mondstadt,Pyro,Catalyst,Trifolium,27/07/2023,Everflame Seed,TRUE,Pyro DMG Bonus,DPS,Female,FALSE,10/20/2020
+Kujou Sara,4,Inazuma,Electro,Bow,Flabellum,14/07/2023,Storm Beads,FALSE,ATK,Support,Female,FALSE,09/01/2021
+Kuki Shinobu,4,Inazuma,Electro,Sword,Tribulatio Demptio,27/07/2023,Runic Fang,FALSE,HP,Healer,Female,FALSE,06/21/2022
+Layla,4,Sumeru,Cryo,Sword,Luscinia,19/12/2023,Perpetual Caliber,FALSE,HP,Shielder,Female,FALSE,11/18/2022
+Lisa,4,Mondstadt,Electro,Catalyst,Tempus Fugit,09/06/2023,Lightning Prism,FALSE,Elemental Mastery,Support,Female,FALSE,09/28/2020
+Lynette,4,Fontaine,Anemo,Sword,Felis Alba,02/02/2023,Artificed Spare Clockwork Component - Coppelia,FALSE,Anemo DMG Bonus,Support,Female,FALSE,08/16/2023
+Lyney,5,Fontaine,Pyro,Bow,Felis Fuscus,02/02/2023,Emperor's Resolution,TRUE,CRIT Rate,DPS,Male,FALSE,08/16/2023
+Mika,4,Mondstadt,Cryo,Polearm,Palumbus,11/08/2023,Pseudo-Stamens,FALSE,HP,Healer,Male,FALSE,03/21/2023
+Mona,5,Mondstadt,Hydro,Catalyst,Astrolabos,31/08/2023,Cleansing Heart,FALSE,Energy Recharge,Support,Female,FALSE,09/28/2020
+Nahida,5,Sumeru,Dendro,Catalyst,Sapientia Oromasdis,27/10/2023,Quelled Creeper,TRUE,Elemental Mastery,Support,Female,TRUE,11/02/2022
+Nilou,5,Sumeru,Hydro,Sword,Lotos Somno,03/12/2023,Perpetual Caliber,TRUE,HP,DPS,Female,FALSE,10/14/2022
+Ningguang,4,Liyue,Geo,Catalyst,Opus Aequilibrium,26/08/2023,Basalt Pillar,FALSE,Geo DMG Bonus,DPS,Female,FALSE,09/28/2020
+Noelle,4,Mondstadt,Geo,Claymore,Parma Cordis,21/03/2023,Basalt Pillar,FALSE,DEF,Shielder,Female,FALSE,09/28/2020
+Neuvillette,5,Fontaine,Hydro,Catalyst,Leviathan Judicator,18/12/2023,Fontemer Unihorn,TRUE,CRIT DMG,DPS,Male,FALSE,09/27/2023
+Qiqi,5,Liyue,Cryo,Sword,Pristina Nova,03/03/2023,Hoarfrost Core,FALSE,Healing Bonus,Healer,Female,FALSE,09/28/2020
+Raiden Shogun,5,Inazuma,Electro,Polearm,Imperatrix Umbrosa,26/06/2023,Storm Beads,TRUE,Energy Recharge,DPS,Female,TRUE,09/01/2021
+Razor,4,Mondstadt,Electro,Claymore,Lupus Minor,09/09/2023,Lightning Prism,FALSE,Physical DMG Bonus,DPS,Male,FALSE,09/28/2020
+Rosaria,4,Mondstadt,Cryo,Polearm,Spinea Corona,24/01/2023,Hoarfrost Core,FALSE,ATK,Support,Female,FALSE,04/06/2021
+Sangonomiya Kokomi,5,Inazuma,Hydro,Catalyst,Dracanea Somnolenta,22/02/2023,Dew of Repudation,TRUE,Hydro DMG Bonus,Healer,Female,FALSE,09/21/2021
+Sayu,4,Inazuma,Anemo,Claymore,Nyctereutes Minor,19/10/2023,Marionette Core,FALSE,Elemental Mastery,Healer,Female,FALSE,08/10/2021
+Shenhe,5,Liyue,Cryo,Polearm,Crista Doloris,10/03/2023,Dragonheir's False Fin,TRUE,ATK,Support,Female,FALSE,01/05/2022
+Shikanoin Heizou,4,Inazuma,Anemo,Catalyst,Cervus Minor,24/07/2023,Runic Fang,FALSE,Anemo DMG Bonus,DPS,Male,FALSE,07/13/2022
+Sucrose,4,Mondstadt,Anemo,Catalyst,Ampulla,26/09/2023,Hurricane Seed,FALSE,Anemo DMG Bonus,Support,Female,FALSE,09/28/2020
+Tartaglia,5,Snezhnaya,Hydro,Bow,Monoceros Caeli,20/07/2023,Cleansing Heart,TRUE,Hydro DMG Bonus,DPS,Male,FALSE,11/11/2020
+Thoma,4,Inazuma,Pyro,Polearm,Rubeum Scutum,09/01/2023,Smoldering Pearl,FALSE,ATK,Shielder,Male,FALSE,10/02/2021
+Tighnari,5,Sumeru,Dendro,Bow,Vulpes Zerda,29/12/2023,Majestic Hooked Beak,FALSE,Dendro DMG Bonus,DPS,Male,FALSE,08/24/2022
+Aether,5,Mondstadt,Anemo,Sword,Viator,28/09/2020,Lightning Prism,FALSE,ATK,DPS,Male,FALSE,09/28/2020
+Lumine,5,Mondstadt,Anemo,Sword,Viatrix,28/09/2020,Lightning Prism,FALSE,ATK,DPS,Female,FALSE,09/28/2020
+Venti,5,Mondstadt,Anemo,Bow,Carmen Dei,16/06/2023,Hurricane Seed,TRUE,Energy Recharge,Support,Male,TRUE,09/28/2020
+Wanderer,5,Sumeru,Anemo,Catalyst,Peregrinus,03/01/2023,Perpetual Caliber,TRUE,CRIT Rate,DPS,Male,FALSE,12/07/2022
+Wriothesley,5,Fontaine,Cryo,Catalyst,Cerberus,23/11/2023,Tourbillion Device,TRUE,CRIT DMG,DPS,Male,FALSE,10/17/2023
+Xiangling,4,Liyue,Pyro,Polearm,Trulla,02/11/2023,Everflame Seed,FALSE,Elemental Mastery,Support,Female,FALSE,09/28/2020
+Xiao,5,Liyue,Anemo,Polearm,Alatus Nemeseos,17/04/2023,Juvenile Jade,TRUE,CRIT Rate,DPS,Male,FALSE,02/03/2021
+Xingqiu,4,Liyue,Hydro,Sword,Fabulae Textile,09/10/2023,Cleansing Heart,FALSE,ATK,Support,Male,FALSE,09/28/2020
+Xinyan,4,Liyue,Pyro,Claymore,Fila Ignium,16/10/2023,Everflame Seed,FALSE,ATK,Shielder,Female,FALSE,12/01/2020
+Yae Miko,5,Inazuma,Electro,Catalyst,Divina Vulpes,27/06/2023,Dragonheir's False Fin,TRUE,CRIT Rate,DPS,Female,FALSE,02/16/2022
+Yanfei,4,Liyue,Pyro,Catalyst,Bestia Iustitia,28/07/2023,Juvenile Jade,FALSE,Pyro DMG Bonus,DPS,Female,FALSE,04/28/2021
+Yaoyao,4,Liyue,Dendro,Polearm,Osmanthus,06/03/2023,Quelled Creeper,FALSE,HP,Healer,Female,FALSE,01/18/2023
+Yelan,5,Liyue,Hydro,Bow,Umbrabilis Orchis,20/04/2023,Runic Fang,TRUE,CRIT Rate,DPS,Female,FALSE,05/31/2022
+Yoimiya,5,Inazuma,Pyro,Bow,Carassius Auratus,21/06/2023,Smoldering Pearl,TRUE,CRIT Rate,DPS,Female,FALSE,08/10/2021
+Yun Jin,4,Liyue,Geo,Polearm,Opera Grandis,21/05/2023,Riftborn Regalia,FALSE,Energy Recharge,Support,Female,FALSE,01/05/2022
+Zhongli,5,Liyue,Geo,Polearm,Lapis Dei,31/12/2023,Basalt Pillar,TRUE,Geo DMG Bonus,Shielder,Male,TRUE,12/01/2020

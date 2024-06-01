@@ -1,0 +1,37 @@
+Name,Element,WeakAgainst,EnemyType,DropsMaterial
+Hilichurl,Anemo,Electro,Normal,Firm Arrowhead
+Anemo_Samachurl,Anemo,Electro,Elite,Divining Scroll
+Hydro_Samachurl,Hydro,Pyro,Elite,Divining Scroll
+Cryo_Samachurl,Cryo,Pyro,Elite,Divining Scroll
+Mitachurl,Anemo,Electro,Elite,Firm Arrowhead
+Treasure Hoarder,Anemo,Electro,Normal,Silver Raven Insignia
+Fatui Skirmisher,Anemo,Electro,Elite,Sergeant's Insignia
+Cicin Mage,Electro,Cryo,Elite,Lightning Prism
+Pyro Abyss Mage,Pyro,Cryo,Elite,Ley Line Sprout
+Cryo Abyss Mage,Cryo,Pyro,Elite,Ley Line Sprout
+Hydro Abyss Mage,Hydro,Electro,Elite,Ley Line Sprout
+Geo Abyss Mage,Geo,Anemo,Elite,Ley Line Sprout
+Electro Abyss Mage,Electro,Hydro,Elite,Ley Line Sprout
+Dendro Slime,Dendro,Hydro,Normal,Slime Condensate
+Anemo Slime,Anemo,Electro,Normal,Slime Condensate
+Geo Slime,Geo,Anemo,Normal,Slime Condensate
+Electro Slime,Electro,Hydro,Normal,Slime Condensate
+Pyro Slime,Pyro,Cryo,Normal,Slime Condensate
+Cryo Slime,Cryo,Pyro,Normal,Slime Condensate
+Large Electro Slime,Electro,Hydro,Elite,Slime Secretions
+Large Cryo Slime,Cryo,Pyro,Elite,Slime Secretions
+Large Pyro Slime,Pyro,Cryo,Elite,Slime Secretions
+Large Geo Slime,Geo,Anemo,Elite,Slime Secretions
+Ruin Guard,Geo,Anemo,Elite,Chaos Gear
+Ruin Hunter,Geo,Anemo,Elite,Chaos Gear
+Ruin Grader,Geo,Anemo,Elite,Chaos Gear
+Ruin Destroyer,Geo,Anemo,Elite,Chaos Gear
+Pyro Regisvine,Pyro,Cryo,Boss,Everflame Seed
+Cryo Regisvine,Cryo,Pyro,Boss,Frozen Seed
+Geo Hypostasis,Geo,Anemo,Boss,Prithiva Topaz Chunk
+Anemo Hypostasis,Anemo,Electro,Boss,Vayuda Turquoise Chunk
+Electro Hypostasis,Electro,Hydro,Boss,Vajrada Amethyst Chunk
+Childe,Hydro,Electro,Weekly Boss,Shard of a Foul Legacy
+Dvalin,Anemo,Cryo,Weekly Boss,Dvalin's Claw
+Andrius,Cryo,Pyro,Weekly Boss,Dvalin's Sigh
+Azhdaha,Geo,Anemo,Weekly Boss,Fragment of Innocence
